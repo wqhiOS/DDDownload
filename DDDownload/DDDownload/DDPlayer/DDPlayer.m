@@ -1,0 +1,478 @@
+//
+//  DDPlayer.m
+//  DDPlayerProject
+//
+//  Created by wuqh on 2018/11/9.
+//  Copyright © 2018 wuqh. All rights reserved.
+//
+
+#import "DDPlayer.h"
+#import "DDPlayerTool.h"
+#import <Reachability/Reachability.h>
+#import "DDKVOManager.h"
+
+static NSString *observerContext = @"DDPlayer.KVO.Contexxt";
+
+@interface DDPlayer()
+{
+    DDKVOManager* _playerItemKVO;
+    NSString *_willPlayUrlString;
+    DDPlayerStatus _willResignActiveStatus;//辞去活跃状态前 播放器的状态
+    NetworkStatus _willResignNetworkStatus;//辞去活跃状态前，网络状态
+}
+@property(nonatomic, assign) NSTimeInterval duration;
+@property(nonatomic, assign) NSTimeInterval currentTime;
+@property(nonatomic, assign) DDPlayerStatus status;
+@property(nonatomic, assign) BOOL isSeekingToTime;
+
+@property(nonatomic, strong) AVPlayer *player;
+@property(nonatomic, strong) id timeObserver;
+
+@property(nonatomic, strong) Reachability *reachability;
+
+@end
+
+@implementation DDPlayer
+
+- (void)dealloc {
+    NSLog(@"%s",__FUNCTION__);
+    
+    [self deleteReachability];
+    [self removeItemObservers];
+    [self removePlayerObservers];
+    [self removeNotifications];
+}
+
+- (instancetype)init {
+    if (self = [super init]) {
+        [self initialize];
+    }
+    return self;
+}
+- (void)initialize {
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setActive:YES error:nil];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+    
+    self.isNeedCanPlay = YES;
+    
+    self.player = [[AVPlayer alloc] init];
+    [self addPlayerObservers];
+    
+    [self addReachability];
+    [self addNotifications];
+}
+
+
+/**
+ 重新创建播放器
+ */
+- (void)reInitPlayer {
+    self.player = [[AVPlayer alloc] init];
+    [self addPlayerObservers];
+    if ([self.delegate respondsToSelector:@selector(playerReInitPlayer)]) {
+        [self.delegate playerReInitPlayer];
+    }
+}
+
+#pragma mark - public
+- (void)playWithUrl:(NSString *)url {
+    
+    _willPlayUrlString = url;
+    
+    if (![DDPlayerTool isLocationPath:url]) {
+        
+        if (self.reachability.currentReachabilityStatus == NotReachable) {
+            if ([self.delegate respondsToSelector:@selector(playerWillPlayWithNetworkError)]) {
+                [self.delegate playerWillPlayWithNetworkError];
+            }
+            return;
+        }
+        
+        //不是本地视频。。网络是3g 不能立即播放
+        if (self.reachability.currentReachabilityStatus == ReachableViaWWAN && self.isCanPlayOnWWAN == NO) {
+            
+            if ([self.delegate respondsToSelector:@selector(playerWillPlayWithWWAN)]) {
+                [self.delegate playerWillPlayWithWWAN];
+            }
+            return;
+        }
+    }
+    
+    NSURL *URL;
+    if ([DDPlayerTool isLocationPath:url]) {
+        URL = [NSURL fileURLWithPath:url];
+    }else {
+        URL = [NSURL URLWithString:url];
+    }
+    
+    self.currentAsset = [AVURLAsset assetWithURL:URL];
+    
+    [self removeItemObservers];
+    self.currentItem = [AVPlayerItem playerItemWithAsset:self.currentAsset];
+    [self addItemObservers];
+    
+//    if ([self.delegate respondsToSelector:@selector(playerWillPlayUrl:)]) {
+//        [self.delegate playerWillPlayUrl:_willPlayUrlString];
+//    }
+    //如果报错 重新创建一个，可以解决问题
+    if (self.player.error) {
+        [self reInitPlayer];
+    }
+    //这个会暂停 不会立马播放
+    [self.player replaceCurrentItemWithPlayerItem:self.currentItem];
+    //
+    [self play];
+    
+}
+- (void)stop {
+    [self removeItemObservers];
+    [self.currentItem cancelPendingSeeks];
+    [self.currentItem.asset cancelLoading];
+    self.currentItem = nil;
+    self.currentAsset = nil;
+//    [self.player replaceCurrentItemWithPlayerItem:nil];//播放器有时候不销毁 不知道是不是这个引起的。先注释
+    self.status = DDPlayerStatusUnknown;
+}
+- (void)play {
+    
+    if (self.isNeedCanPlay == NO) {
+        return;
+    }
+
+    if (![DDPlayerTool isLocationPath:self.currentAsset.URL.absoluteString]) {
+        //不是本地视频。。网络是3g 不能立即播放
+        if (self.reachability.currentReachabilityStatus == ReachableViaWWAN && self.isCanPlayOnWWAN == NO) {
+            return;
+        }
+    }
+    if (self.isBackgroundPlay == NO) {
+        if (UIApplication.sharedApplication.applicationState == UIApplicationStateActive) {
+      
+            [self.player play];
+        }
+    }else {
+    
+        [self.player play];
+    }
+
+}
+- (void)playImmediatelyAtRate:(CGFloat)rate {
+    if (@available(iOS 10.0, *)) {
+        [self.player playImmediatelyAtRate:rate];
+    } else {
+        // Fallback on earlier versions
+        self.player.rate= rate;
+    }
+}
+- (void)pause {
+    [self.player pause];
+}
+
+- (void)seekToTime:(NSTimeInterval)time isPlayImmediately:(BOOL)isPlayImmediately completionHandler:(void (^)(BOOL))completionHandler  {
+    
+    self.isSeekingToTime = YES;
+    
+    [self.player seekToTime:CMTimeMakeWithSeconds(time, NSEC_PER_SEC) toleranceBefore:CMTimeMake(1, 1000) toleranceAfter:CMTimeMake(1, 1000) completionHandler:^(BOOL finished) {
+        self.isSeekingToTime = NO;
+        
+        if (isPlayImmediately) {
+            [self play];
+        }else {
+            [self pause];
+        }
+        if (completionHandler) {
+            completionHandler(finished);
+        }
+    }];
+    
+}
+
+- (void)bindToPlayerLayer:(AVPlayerLayer *)layer {
+    layer.player = self.player;
+}
+
+#pragma mark - getter
+- (BOOL)isPause {
+    return (self.player.rate == 0 || self.status == DDPlayerStatusPaused);
+}
+- (BOOL)isPlaying {
+    return (self.player.rate != 0 || self.status == DDPlayerStatusPlaying);
+}
+- (CGFloat)rate {
+    return self.player.rate;
+}
+- (BOOL)isLocationUrl {
+    return [DDPlayerTool isLocationPath:_willPlayUrlString];
+}
+#pragma mark - setter
+- (void)setStatus:(DDPlayerStatus)status {
+    if (_status != status) {
+        _status = status;
+        if ([self.delegate respondsToSelector:@selector(playerStatusChanged:)]) {
+            [self.delegate playerStatusChanged:status];
+        }
+        if ([self.delegateController respondsToSelector:@selector(playerStatusChanged:)]) {
+            [self.delegateController playerStatusChanged:status];
+        }
+    }
+}
+- (void)setCurrentTime:(NSTimeInterval)currentTime {
+    _currentTime = currentTime;
+    if ([self.delegate respondsToSelector:@selector(playerTimeChanged:)]) {
+        [self.delegate playerTimeChanged:currentTime];
+    }
+    if ([self.delegateController respondsToSelector:@selector(playerTimeChanged:)]) {
+        [self.delegateController playerTimeChanged:currentTime];
+    }
+}
+- (void)setVolume:(CGFloat)volume {
+    _volume = volume;
+    self.player.volume = volume;
+}
+
+- (void)setIsCanPlayOnWWAN:(BOOL)isCanPlayOnWWAN {
+    
+    if (_isCanPlayOnWWAN == isCanPlayOnWWAN) {
+        return;
+    }
+    
+    _isCanPlayOnWWAN = isCanPlayOnWWAN;
+    if (_isCanPlayOnWWAN == YES) {
+        if (self.status == DDPlayerStatusUnknown) {
+            [self playWithUrl:_willPlayUrlString];
+        }else {
+            [self play];
+        }
+    }
+}
+#pragma mark - private
+- (void)updateStatus {
+ 
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        if (self.currentItem == nil) {
+            return ;
+        }
+        if (self.player.error != nil || self.currentItem.error != nil) {
+            self.status = DDPlayerStatusError;
+            return;
+        }
+        
+        if (@available(iOS 10, *)) {
+            switch (self.player.timeControlStatus) {
+                case AVPlayerTimeControlStatusPlaying:
+                    self.status = DDPlayerStatusPlaying;
+                    break;
+                case AVPlayerTimeControlStatusPaused:
+                    self.status = DDPlayerStatusPaused;
+                    break;
+                case AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate:
+                    self.status = DDPlayerStatusBuffering;
+                    break;
+                default:
+                    break;
+            }
+        }else {
+            if (self.player.rate != 0) {
+                if (self.currentItem.isPlaybackLikelyToKeepUp) {
+                    self.status = DDPlayerStatusPlaying;
+                }else {
+                    self.status = DDPlayerStatusBuffering;
+                }
+            }else {
+                self.status = DDPlayerStatusPaused;
+            }
+        }
+        
+    });
+}
+
+/**
+ *  返回 当前 视频 缓存时长
+ */
+- (NSTimeInterval)availableCache{
+    NSArray *loadedTimeRanges = [self.currentItem loadedTimeRanges];
+    CMTimeRange timeRange = [loadedTimeRanges.firstObject CMTimeRangeValue];// 获取缓冲区域
+    float startSeconds = CMTimeGetSeconds(timeRange.start);
+    float durationSeconds = CMTimeGetSeconds(timeRange.duration);
+    NSTimeInterval result = startSeconds + durationSeconds;// 计算缓冲总进度
+    
+    return result;
+}
+
+#pragma mark - kvo
+- (void)addItemObservers {
+    
+    [_playerItemKVO safelyRemoveAllObservers];
+    
+    _playerItemKVO = [[DDKVOManager alloc] initWithTarget:self.currentItem];
+    
+    [_playerItemKVO safelyAddObserver:self
+                           forKeyPath:@"status"
+                              options:NSKeyValueObservingOptionNew
+                              context:&observerContext];
+    [_playerItemKVO safelyAddObserver:self
+                           forKeyPath:@"playbackLikelyToKeepUp"
+                              options:NSKeyValueObservingOptionNew
+                              context:&observerContext];
+    [_playerItemKVO safelyAddObserver:self
+                           forKeyPath:@"playbackBufferEmpty"
+                              options:NSKeyValueObservingOptionNew
+                              context:&observerContext];
+    [_playerItemKVO safelyAddObserver:self
+                           forKeyPath:@"playbackBufferFull"
+                              options:NSKeyValueObservingOptionNew
+                              context:&observerContext];
+//    [_playerItemKVO safelyAddObserver:self
+//                           forKeyPath:@"loadedTimeRanges"
+//                              options:NSKeyValueObservingOptionNew
+//                              context:&observerContext];
+    
+    
+}
+- (void)removeItemObservers {
+    [_playerItemKVO safelyRemoveAllObservers];
+    
+}
+- (void)addPlayerObservers {
+    __weak typeof(self) weakSelf = self;//下面会造成循环引用
+    self.timeObserver = [self.player addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(0.5, NSEC_PER_SEC) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+      
+        if (weakSelf.currentItem == nil) {
+            return ;
+        }
+
+        [weakSelf updateStatus];
+        
+        
+        if (CMTimeGetSeconds(weakSelf.currentItem.duration) <= 0) {
+            return ;
+        }
+//        NSLog(@"%lf &*&*& %lf",CMTimeGetSeconds(time),CMTimeGetSeconds(weakSelf.currentItem.duration));
+        weakSelf.duration = CMTimeGetSeconds(weakSelf.currentItem.duration);
+        
+        weakSelf.currentTime = CMTimeGetSeconds(time);
+    }];
+    [self.player addObserver:self forKeyPath:@"rate" options:NSKeyValueObservingOptionNew context:&observerContext];
+    [self.player addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:&observerContext];
+    if (@available(iOS 10.0, *)) {
+        [self.player addObserver:self forKeyPath:@"timeControlStatus" options:NSKeyValueObservingOptionNew context:&observerContext];
+    }
+    
+}
+- (void)removePlayerObservers {
+    if (self.timeObserver) {
+        [self.player removeTimeObserver:self.timeObserver];
+    }
+    [self.player removeObserver:self forKeyPath:@"rate" context:&observerContext];
+    [self.player removeObserver:self forKeyPath:@"status" context:&observerContext];
+    if (@available(iOS 10.0, *)) {
+        [self.player removeObserver:self forKeyPath:@"timeControlStatus" context:&observerContext];
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (context == &observerContext) {
+        
+        if (self.currentItem == object && [keyPath isEqualToString:@"status"] && self.currentItem.status == AVPlayerItemStatusReadyToPlay) {
+            
+            if ([self.delegate respondsToSelector:@selector(playerReadyToPlay)]) {
+                [self.delegate playerReadyToPlay];
+            }
+            if ([self.delegateController respondsToSelector:@selector(playerReadyToPlay)]) {
+                [self.delegateController playerReadyToPlay];
+            }
+            
+            return;
+        }
+
+        [self updateStatus];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+#pragma mark - notification
+- (void)addNotifications {
+    
+    // 监听播放完成
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(playerItemDidPlayToEndTime:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+    // app进入活跃状态
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
+    // app辞去活跃状态
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive) name: UIApplicationWillResignActiveNotification object:nil];
+}
+- (void)removeNotifications {
+    [NSNotificationCenter.defaultCenter removeObserver:self];
+}
+- (void)playerItemDidPlayToEndTime:(NSNotification *)notification {
+    if (self.currentItem != nil && notification.object == self.currentItem ) {
+        self.status = DDPlayerStatusEnd;
+        if ([self.delegateController respondsToSelector:@selector(playerPlayFinish)]) {
+            [self.delegateController playerPlayFinish];
+        }
+    }
+}
+- (void)applicationBecomeActive {
+    
+    if (![DDPlayerTool isLocationPath:self.currentAsset.URL.absoluteString]) {
+        if (self.reachability.currentReachabilityStatus == NotReachable) {
+            [self pause];
+            return;
+        }
+        
+        if ((_willResignNetworkStatus == ReachableViaWWAN || _willResignNetworkStatus == NotReachable) && self.reachability.currentReachabilityStatus == ReachableViaWiFi) {
+            [self play];
+            return;
+        }
+        
+        if (_willResignActiveStatus == DDPlayerStatusPaused) {
+            return;
+        }
+    }
+    
+    if (self.status == DDPlayerStatusPaused) {
+        [self play];
+    }
+}
+- (void)applicationWillResignActive {
+    _willResignActiveStatus = self.status;
+    _willResignNetworkStatus = self.reachability.currentReachabilityStatus;
+    if (_willResignActiveStatus == DDPlayerStatusPlaying) {
+        [self pause];
+    }
+}
+
+
+#pragma mark - 网络监测
+- (void)addReachability {
+    self.reachability = [Reachability reachabilityForInternetConnection];
+    [self.reachability startNotifier];
+    // 监听网络状态
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(netStatusChange:) name:kReachabilityChangedNotification object:nil];
+}
+
+- (void)netStatusChange:(NSNotification *)notification {
+    
+    //如果是播放本地视频的时候。不需要知道网络状态的变化。
+    if ([DDPlayerTool isLocationPath:_willPlayUrlString]) {
+        return;
+    }
+    
+    Reachability *reach = notification.object;
+    
+    if ([self.delegate respondsToSelector:@selector(playerNetworkStatusChanged:)]) {
+        [self.delegate playerNetworkStatusChanged:reach.currentReachabilityStatus];
+    }
+
+}
+
+- (void)deleteReachability {
+    [self.reachability stopNotifier];
+}
+
+@end
+
