@@ -8,6 +8,7 @@
 
 #import "DownloadViewController.h"
 #import "DownloadCell.h"
+#import "PlayerViewController.h"
 
 @interface DownloadViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -41,6 +42,17 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DownloadCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellId" forIndexPath:indexPath];
+    __weak typeof(self) weakSelf = self;
+    cell.clickDownloadButtonBlock = ^{
+        
+    };
+    cell.clickCatButtonBlock = ^{
+        PlayerViewController *vc = [PlayerViewController new];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    cell.clickDeleteButtonBlock = ^{
+        
+    };
     return cell;
 }
 

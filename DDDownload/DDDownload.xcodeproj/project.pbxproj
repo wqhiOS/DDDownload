@@ -67,6 +67,11 @@
 		E34FF58921C2179200B19331 /* DDTryWatchFinishView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF55821C2179200B19331 /* DDTryWatchFinishView.m */; };
 		E34FF58A21C2179200B19331 /* DDPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF55A21C2179200B19331 /* DDPlayer.m */; };
 		E34FF58B21C2179200B19331 /* DDPlayer_Gif_Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = E34FF55D21C2179200B19331 /* DDPlayer_Gif_Loading.gif */; };
+		E34FF58E21C217D500B19331 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF58D21C217D500B19331 /* PlayerViewController.m */; };
+		E34FF59121C218F600B19331 /* DDDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF59021C218F600B19331 /* DDDownloadManager.m */; };
+		E34FF59621C219C400B19331 /* DDDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF59521C219C400B19331 /* DDDownloadCache.m */; };
+		E34FF59921C219DC00B19331 /* DDDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF59821C219DC00B19331 /* DDDownloadModel.m */; };
+		E34FF59C21C2226400B19331 /* NSString+md5.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF59B21C2226400B19331 /* NSString+md5.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +219,17 @@
 		E34FF55A21C2179200B19331 /* DDPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayer.m; sourceTree = "<group>"; };
 		E34FF55B21C2179200B19331 /* DDPlayerStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerStatus.h; sourceTree = "<group>"; };
 		E34FF55D21C2179200B19331 /* DDPlayer_Gif_Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DDPlayer_Gif_Loading.gif; sourceTree = "<group>"; };
+		E34FF58C21C217D500B19331 /* PlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		E34FF58D21C217D500B19331 /* PlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		E34FF58F21C218F600B19331 /* DDDownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDDownloadManager.h; sourceTree = "<group>"; };
+		E34FF59021C218F600B19331 /* DDDownloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDDownloadManager.m; sourceTree = "<group>"; };
+		E34FF59321C2190A00B19331 /* DDDownload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDDownload.h; sourceTree = "<group>"; };
+		E34FF59421C219C400B19331 /* DDDownloadCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDDownloadCache.h; sourceTree = "<group>"; };
+		E34FF59521C219C400B19331 /* DDDownloadCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDDownloadCache.m; sourceTree = "<group>"; };
+		E34FF59721C219DC00B19331 /* DDDownloadModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDDownloadModel.h; sourceTree = "<group>"; };
+		E34FF59821C219DC00B19331 /* DDDownloadModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDDownloadModel.m; sourceTree = "<group>"; };
+		E34FF59A21C2226400B19331 /* NSString+md5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+md5.h"; sourceTree = "<group>"; };
+		E34FF59B21C2226400B19331 /* NSString+md5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+md5.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,7 +308,7 @@
 		E34FF49A21C20D0200B19331 /* DDDownload */ = {
 			isa = PBXGroup;
 			children = (
-				E34FF4E621C2179200B19331 /* DDPlayer */,
+				E34FF59221C218FB00B19331 /* DDDownload */,
 				E34FF49B21C20D0200B19331 /* AppDelegate.h */,
 				E34FF49C21C20D0200B19331 /* AppDelegate.m */,
 				E34FF4E121C213CD00B19331 /* view */,
@@ -328,6 +344,7 @@
 		E34FF4E121C213CD00B19331 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				E34FF4E621C2179200B19331 /* DDPlayer */,
 				E34FF4DA21C213C300B19331 /* DownloadCell.h */,
 				E34FF4DC21C213C300B19331 /* DownloadCell.m */,
 				E34FF4DD21C213C300B19331 /* DownloadCell.xib */,
@@ -342,6 +359,8 @@
 				E34FF4DB21C213C300B19331 /* MainViewController.m */,
 				E34FF4E321C2158B00B19331 /* DownloadViewController.h */,
 				E34FF4E421C2158B00B19331 /* DownloadViewController.m */,
+				E34FF58C21C217D500B19331 /* PlayerViewController.h */,
+				E34FF58D21C217D500B19331 /* PlayerViewController.m */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -633,6 +652,22 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		E34FF59221C218FB00B19331 /* DDDownload */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF59321C2190A00B19331 /* DDDownload.h */,
+				E34FF58F21C218F600B19331 /* DDDownloadManager.h */,
+				E34FF59021C218F600B19331 /* DDDownloadManager.m */,
+				E34FF59721C219DC00B19331 /* DDDownloadModel.h */,
+				E34FF59821C219DC00B19331 /* DDDownloadModel.m */,
+				E34FF59421C219C400B19331 /* DDDownloadCache.h */,
+				E34FF59521C219C400B19331 /* DDDownloadCache.m */,
+				E34FF59A21C2226400B19331 /* NSString+md5.h */,
+				E34FF59B21C2226400B19331 /* NSString+md5.m */,
+			);
+			path = DDDownload;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -858,7 +893,9 @@
 				E34FF56421C2179200B19331 /* DDPlayerView+ShowSubView.m in Sources */,
 				E34FF58621C2179200B19331 /* DDPlayerDragProgressPortraitView.m in Sources */,
 				E34FF56821C2179200B19331 /* DDPlayerUIFactory.m in Sources */,
+				E34FF59621C219C400B19331 /* DDDownloadCache.m in Sources */,
 				E34FF57221C2179200B19331 /* DDTextView.m in Sources */,
+				E34FF59921C219DC00B19331 /* DDDownloadModel.m in Sources */,
 				E34FF56521C2179200B19331 /* DDPlayerView+TryWatch.m in Sources */,
 				E34FF56321C2179200B19331 /* DDPlayerView+CaptureImage.m in Sources */,
 				E34FF58321C2179200B19331 /* DDBrightView.m in Sources */,
@@ -870,17 +907,20 @@
 				E34FF58421C2179200B19331 /* DDNeedPayView.m in Sources */,
 				E34FF55E21C2179200B19331 /* DDPlayerView.m in Sources */,
 				E34FF56121C2179200B19331 /* DDPlayerView+CaptureVideo.m in Sources */,
+				E34FF59121C218F600B19331 /* DDDownloadManager.m in Sources */,
 				E34FF58521C2179200B19331 /* DDTryWatchView.m in Sources */,
 				E34FF56921C2179200B19331 /* DDKVOManager.m in Sources */,
 				E34FF56C21C2179200B19331 /* DDPlayerClarityPromptLabel.m in Sources */,
 				E34FF57E21C2179200B19331 /* DDPlayerControlView.m in Sources */,
 				E34FF57A21C2179200B19331 /* DDPlayerBackButton.m in Sources */,
 				E34FF58A21C2179200B19331 /* DDPlayer.m in Sources */,
+				E34FF59C21C2226400B19331 /* NSString+md5.m in Sources */,
 				E34FF58721C2179200B19331 /* DDPlayerDragProgressBaseView.m in Sources */,
 				E34FF57C21C2179200B19331 /* DDPlayerErrorView.m in Sources */,
 				E34FF56F21C2179200B19331 /* DDPlayerCoverView.m in Sources */,
 				E34FF57021C2179200B19331 /* DDCaptureVideoView.m in Sources */,
 				E34FF56221C2179200B19331 /* DDPlayerView+SwitchLine.m in Sources */,
+				E34FF58E21C217D500B19331 /* PlayerViewController.m in Sources */,
 				E34FF57B21C2179200B19331 /* DDLeftBottomPromptLabel.m in Sources */,
 				E34FF57D21C2179200B19331 /* DDPlayerControlBottomLandscapeView.m in Sources */,
 				E34FF57721C2179200B19331 /* DDPlayerContainerView.m in Sources */,
