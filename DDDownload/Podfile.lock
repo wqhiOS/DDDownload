@@ -1,0 +1,30 @@
+PODS:
+  - Masonry (1.1.0)
+  - Reachability (3.2)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - YYCache (1.0.4)
+
+DEPENDENCIES:
+  - Masonry
+  - Reachability
+  - SDWebImage (~> 4.0)
+  - YYCache
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+    - Reachability
+    - SDWebImage
+    - YYCache
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+
+PODFILE CHECKSUM: 2631bd3584c11e2747ca3048014217da0f06c7f3
+
+COCOAPODS: 1.5.3
