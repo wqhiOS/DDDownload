@@ -1,6 +1,0 @@
-framework module Pods_DDDownload {
-  umbrella header "Pods-DDDownload-umbrella.h"
-
-  export *
-  module * { export * }
-}
