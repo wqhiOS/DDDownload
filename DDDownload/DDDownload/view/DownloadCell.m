@@ -11,6 +11,8 @@
 @interface DownloadCell()
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet UIButton *downloadButton;
+@property (weak, nonatomic) IBOutlet UIButton *catButton;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
 @end
 
@@ -32,6 +34,21 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+- (IBAction)downloadButtonClick:(UIButton *)sender {
+    if (self.clickDownloadButtonBlock) {
+        self.clickDownloadButtonBlock();
+    }
+}
+- (IBAction)catButtonClick:(UIButton *)sender {
+    if (self.clickCatButtonBlock) {
+        self.clickCatButtonBlock();
+    }
+}
+- (IBAction)deleteButtonClick:(UIButton *)sender {
+    if (self.clickDeleteButtonBlock) {
+        self.clickDeleteButtonBlock();
+    }
 }
 
 @end

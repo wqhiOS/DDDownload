@@ -21,6 +21,52 @@
 		E34FF4DF21C213C300B19331 /* DownloadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF4DC21C213C300B19331 /* DownloadCell.m */; };
 		E34FF4E021C213C300B19331 /* DownloadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34FF4DD21C213C300B19331 /* DownloadCell.xib */; };
 		E34FF4E521C2158B00B19331 /* DownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF4E421C2158B00B19331 /* DownloadViewController.m */; };
+		E34FF55E21C2179200B19331 /* DDPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF4EB21C2179200B19331 /* DDPlayerView.m */; };
+		E34FF55F21C2179200B19331 /* DDPlayerView+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF4EF21C2179200B19331 /* DDPlayerView+Private.m */; };
+		E34FF56021C2179200B19331 /* DDPlayerView+ViewAppear.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF4F221C2179200B19331 /* DDPlayerView+ViewAppear.m */; };
+		E34FF56121C2179200B19331 /* DDPlayerView+CaptureVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF4F521C2179200B19331 /* DDPlayerView+CaptureVideo.m */; };
+		E34FF56221C2179200B19331 /* DDPlayerView+SwitchLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF4F721C2179200B19331 /* DDPlayerView+SwitchLine.m */; };
+		E34FF56321C2179200B19331 /* DDPlayerView+CaptureImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF4FB21C2179200B19331 /* DDPlayerView+CaptureImage.m */; };
+		E34FF56421C2179200B19331 /* DDPlayerView+ShowSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF4FC21C2179200B19331 /* DDPlayerView+ShowSubView.m */; };
+		E34FF56521C2179200B19331 /* DDPlayerView+TryWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF4FE21C2179200B19331 /* DDPlayerView+TryWatch.m */; };
+		E34FF56621C2179200B19331 /* DDPlayerView+ToPay.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF4FF21C2179200B19331 /* DDPlayerView+ToPay.m */; };
+		E34FF56721C2179200B19331 /* DDPlayerContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF50421C2179200B19331 /* DDPlayerContentView.m */; };
+		E34FF56821C2179200B19331 /* DDPlayerUIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF50821C2179200B19331 /* DDPlayerUIFactory.m */; };
+		E34FF56921C2179200B19331 /* DDKVOManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF50921C2179200B19331 /* DDKVOManager.m */; };
+		E34FF56A21C2179200B19331 /* DDPlayerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF50C21C2179200B19331 /* DDPlayerTool.m */; };
+		E34FF56B21C2179200B19331 /* DDPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF50F21C2179200B19331 /* DDPlayerManager.m */; };
+		E34FF56C21C2179200B19331 /* DDPlayerClarityPromptLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF51221C2179200B19331 /* DDPlayerClarityPromptLabel.m */; };
+		E34FF56D21C2179200B19331 /* DDPlayerClarityTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF51321C2179200B19331 /* DDPlayerClarityTool.m */; };
+		E34FF56E21C2179200B19331 /* DDPlayerClarityChoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF51721C2179200B19331 /* DDPlayerClarityChoiceView.m */; };
+		E34FF56F21C2179200B19331 /* DDPlayerCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF51921C2179200B19331 /* DDPlayerCoverView.m */; };
+		E34FF57021C2179200B19331 /* DDCaptureVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF51C21C2179200B19331 /* DDCaptureVideoView.m */; };
+		E34FF57121C2179200B19331 /* DDCaptureVideoShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF51D21C2179200B19331 /* DDCaptureVideoShareView.m */; };
+		E34FF57221C2179200B19331 /* DDTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF51E21C2179200B19331 /* DDTextView.m */; };
+		E34FF57321C2179200B19331 /* DDCaptureVideoCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF52021C2179200B19331 /* DDCaptureVideoCommentView.m */; };
+		E34FF57421C2179200B19331 /* DDCaptureVideoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF52421C2179200B19331 /* DDCaptureVideoProgressView.m */; };
+		E34FF57521C2179200B19331 /* DDCaptureImageShareSmallView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF52721C2179200B19331 /* DDCaptureImageShareSmallView.m */; };
+		E34FF57621C2179200B19331 /* DDCaptureImageShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF52A21C2179200B19331 /* DDCaptureImageShareView.m */; };
+		E34FF57721C2179200B19331 /* DDPlayerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF52D21C2179200B19331 /* DDPlayerContainerView.m */; };
+		E34FF57821C2179200B19331 /* DDNetworkErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF53121C2179200B19331 /* DDNetworkErrorView.m */; };
+		E34FF57921C2179200B19331 /* DDNetworkWWANWarnView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF53221C2179200B19331 /* DDNetworkWWANWarnView.m */; };
+		E34FF57A21C2179200B19331 /* DDPlayerBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF53421C2179200B19331 /* DDPlayerBackButton.m */; };
+		E34FF57B21C2179200B19331 /* DDLeftBottomPromptLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF53721C2179200B19331 /* DDLeftBottomPromptLabel.m */; };
+		E34FF57C21C2179200B19331 /* DDPlayerErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF53921C2179200B19331 /* DDPlayerErrorView.m */; };
+		E34FF57D21C2179200B19331 /* DDPlayerControlBottomLandscapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF53C21C2179200B19331 /* DDPlayerControlBottomLandscapeView.m */; };
+		E34FF57E21C2179200B19331 /* DDPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF53D21C2179200B19331 /* DDPlayerControlView.m */; };
+		E34FF57F21C2179200B19331 /* DDPlayerControlTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF53F21C2179200B19331 /* DDPlayerControlTopView.m */; };
+		E34FF58021C2179200B19331 /* DDPlayerControlBottomPortraitView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF54021C2179200B19331 /* DDPlayerControlBottomPortraitView.m */; };
+		E34FF58121C2179200B19331 /* DDPlayerComponentBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF54121C2179200B19331 /* DDPlayerComponentBaseView.m */; };
+		E34FF58221C2179200B19331 /* DDPlayerControlBottomBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF54221C2179200B19331 /* DDPlayerControlBottomBaseView.m */; };
+		E34FF58321C2179200B19331 /* DDBrightView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF54A21C2179200B19331 /* DDBrightView.m */; };
+		E34FF58421C2179200B19331 /* DDNeedPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF54E21C2179200B19331 /* DDNeedPayView.m */; };
+		E34FF58521C2179200B19331 /* DDTryWatchView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF54F21C2179200B19331 /* DDTryWatchView.m */; };
+		E34FF58621C2179200B19331 /* DDPlayerDragProgressPortraitView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF55121C2179200B19331 /* DDPlayerDragProgressPortraitView.m */; };
+		E34FF58721C2179200B19331 /* DDPlayerDragProgressBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF55321C2179200B19331 /* DDPlayerDragProgressBaseView.m */; };
+		E34FF58821C2179200B19331 /* DDPlayerDragProgressLandscapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF55521C2179200B19331 /* DDPlayerDragProgressLandscapeView.m */; };
+		E34FF58921C2179200B19331 /* DDTryWatchFinishView.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF55821C2179200B19331 /* DDTryWatchFinishView.m */; };
+		E34FF58A21C2179200B19331 /* DDPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF55A21C2179200B19331 /* DDPlayer.m */; };
+		E34FF58B21C2179200B19331 /* DDPlayer_Gif_Loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = E34FF55D21C2179200B19331 /* DDPlayer_Gif_Loading.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +118,102 @@
 		E34FF4DD21C213C300B19331 /* DownloadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadCell.xib; sourceTree = "<group>"; };
 		E34FF4E321C2158B00B19331 /* DownloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadViewController.h; sourceTree = "<group>"; };
 		E34FF4E421C2158B00B19331 /* DownloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownloadViewController.m; sourceTree = "<group>"; };
+		E34FF4E721C2179200B19331 /* DDPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayer.h; sourceTree = "<group>"; };
+		E34FF4E821C2179200B19331 /* DDPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerManager.h; sourceTree = "<group>"; };
+		E34FF4EA21C2179200B19331 /* DDPlayerContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerContentView.h; sourceTree = "<group>"; };
+		E34FF4EB21C2179200B19331 /* DDPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerView.m; sourceTree = "<group>"; };
+		E34FF4EC21C2179200B19331 /* DDPlayerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerViewDelegate.h; sourceTree = "<group>"; };
+		E34FF4EE21C2179200B19331 /* DDPlayerView+ShowSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDPlayerView+ShowSubView.h"; sourceTree = "<group>"; };
+		E34FF4EF21C2179200B19331 /* DDPlayerView+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDPlayerView+Private.m"; sourceTree = "<group>"; };
+		E34FF4F121C2179200B19331 /* DDPlayerView+ViewAppear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDPlayerView+ViewAppear.h"; sourceTree = "<group>"; };
+		E34FF4F221C2179200B19331 /* DDPlayerView+ViewAppear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDPlayerView+ViewAppear.m"; sourceTree = "<group>"; };
+		E34FF4F421C2179200B19331 /* DDPlayerView+CaptureVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDPlayerView+CaptureVideo.h"; sourceTree = "<group>"; };
+		E34FF4F521C2179200B19331 /* DDPlayerView+CaptureVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDPlayerView+CaptureVideo.m"; sourceTree = "<group>"; };
+		E34FF4F721C2179200B19331 /* DDPlayerView+SwitchLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDPlayerView+SwitchLine.m"; sourceTree = "<group>"; };
+		E34FF4F821C2179200B19331 /* DDPlayerView+SwitchLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDPlayerView+SwitchLine.h"; sourceTree = "<group>"; };
+		E34FF4FA21C2179200B19331 /* DDPlayerView+CaptureImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDPlayerView+CaptureImage.h"; sourceTree = "<group>"; };
+		E34FF4FB21C2179200B19331 /* DDPlayerView+CaptureImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDPlayerView+CaptureImage.m"; sourceTree = "<group>"; };
+		E34FF4FC21C2179200B19331 /* DDPlayerView+ShowSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDPlayerView+ShowSubView.m"; sourceTree = "<group>"; };
+		E34FF4FE21C2179200B19331 /* DDPlayerView+TryWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDPlayerView+TryWatch.m"; sourceTree = "<group>"; };
+		E34FF4FF21C2179200B19331 /* DDPlayerView+ToPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDPlayerView+ToPay.m"; sourceTree = "<group>"; };
+		E34FF50021C2179200B19331 /* DDPlayerView+TryWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDPlayerView+TryWatch.h"; sourceTree = "<group>"; };
+		E34FF50121C2179200B19331 /* DDPlayerView+ToPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDPlayerView+ToPay.h"; sourceTree = "<group>"; };
+		E34FF50221C2179200B19331 /* DDPlayerView+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDPlayerView+Private.h"; sourceTree = "<group>"; };
+		E34FF50321C2179200B19331 /* DDPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerView.h; sourceTree = "<group>"; };
+		E34FF50421C2179200B19331 /* DDPlayerContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerContentView.m; sourceTree = "<group>"; };
+		E34FF50621C2179200B19331 /* DDKVOManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDKVOManager.h; sourceTree = "<group>"; };
+		E34FF50721C2179200B19331 /* DDPlayerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerTool.h; sourceTree = "<group>"; };
+		E34FF50821C2179200B19331 /* DDPlayerUIFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerUIFactory.m; sourceTree = "<group>"; };
+		E34FF50921C2179200B19331 /* DDKVOManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDKVOManager.m; sourceTree = "<group>"; };
+		E34FF50A21C2179200B19331 /* NSTimer+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Block.h"; sourceTree = "<group>"; };
+		E34FF50B21C2179200B19331 /* DDPlayerUIFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerUIFactory.h; sourceTree = "<group>"; };
+		E34FF50C21C2179200B19331 /* DDPlayerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerTool.m; sourceTree = "<group>"; };
+		E34FF50D21C2179200B19331 /* DDVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDVideoPlayer.h; sourceTree = "<group>"; };
+		E34FF50E21C2179200B19331 /* DDPlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerDelegate.h; sourceTree = "<group>"; };
+		E34FF50F21C2179200B19331 /* DDPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerManager.m; sourceTree = "<group>"; };
+		E34FF51221C2179200B19331 /* DDPlayerClarityPromptLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerClarityPromptLabel.m; sourceTree = "<group>"; };
+		E34FF51321C2179200B19331 /* DDPlayerClarityTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerClarityTool.m; sourceTree = "<group>"; };
+		E34FF51421C2179200B19331 /* DDPlayerClarityChoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerClarityChoiceView.h; sourceTree = "<group>"; };
+		E34FF51521C2179200B19331 /* DDPlayerClarityTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerClarityTool.h; sourceTree = "<group>"; };
+		E34FF51621C2179200B19331 /* DDPlayerClarityPromptLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerClarityPromptLabel.h; sourceTree = "<group>"; };
+		E34FF51721C2179200B19331 /* DDPlayerClarityChoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerClarityChoiceView.m; sourceTree = "<group>"; };
+		E34FF51921C2179200B19331 /* DDPlayerCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerCoverView.m; sourceTree = "<group>"; };
+		E34FF51A21C2179200B19331 /* DDPlayerCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerCoverView.h; sourceTree = "<group>"; };
+		E34FF51C21C2179200B19331 /* DDCaptureVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCaptureVideoView.m; sourceTree = "<group>"; };
+		E34FF51D21C2179200B19331 /* DDCaptureVideoShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCaptureVideoShareView.m; sourceTree = "<group>"; };
+		E34FF51E21C2179200B19331 /* DDTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTextView.m; sourceTree = "<group>"; };
+		E34FF51F21C2179200B19331 /* DDCaptureVideoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCaptureVideoProgressView.h; sourceTree = "<group>"; };
+		E34FF52021C2179200B19331 /* DDCaptureVideoCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCaptureVideoCommentView.m; sourceTree = "<group>"; };
+		E34FF52121C2179200B19331 /* DDCaptureVideoShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCaptureVideoShareView.h; sourceTree = "<group>"; };
+		E34FF52221C2179200B19331 /* DDCaptureVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCaptureVideoView.h; sourceTree = "<group>"; };
+		E34FF52321C2179200B19331 /* DDTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTextView.h; sourceTree = "<group>"; };
+		E34FF52421C2179200B19331 /* DDCaptureVideoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCaptureVideoProgressView.m; sourceTree = "<group>"; };
+		E34FF52521C2179200B19331 /* DDCaptureVideoCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCaptureVideoCommentView.h; sourceTree = "<group>"; };
+		E34FF52721C2179200B19331 /* DDCaptureImageShareSmallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCaptureImageShareSmallView.m; sourceTree = "<group>"; };
+		E34FF52821C2179200B19331 /* DDCaptureImageShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCaptureImageShareView.h; sourceTree = "<group>"; };
+		E34FF52921C2179200B19331 /* DDCaptureImageShareSmallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCaptureImageShareSmallView.h; sourceTree = "<group>"; };
+		E34FF52A21C2179200B19331 /* DDCaptureImageShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCaptureImageShareView.m; sourceTree = "<group>"; };
+		E34FF52C21C2179200B19331 /* DDPlayerContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerContainerView.h; sourceTree = "<group>"; };
+		E34FF52D21C2179200B19331 /* DDPlayerContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerContainerView.m; sourceTree = "<group>"; };
+		E34FF52F21C2179200B19331 /* DDNetworkErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNetworkErrorView.h; sourceTree = "<group>"; };
+		E34FF53021C2179200B19331 /* DDNetworkWWANWarnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNetworkWWANWarnView.h; sourceTree = "<group>"; };
+		E34FF53121C2179200B19331 /* DDNetworkErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNetworkErrorView.m; sourceTree = "<group>"; };
+		E34FF53221C2179200B19331 /* DDNetworkWWANWarnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNetworkWWANWarnView.m; sourceTree = "<group>"; };
+		E34FF53421C2179200B19331 /* DDPlayerBackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerBackButton.m; sourceTree = "<group>"; };
+		E34FF53521C2179200B19331 /* DDLeftBottomPromptLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLeftBottomPromptLabel.h; sourceTree = "<group>"; };
+		E34FF53621C2179200B19331 /* DDPlayerBackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerBackButton.h; sourceTree = "<group>"; };
+		E34FF53721C2179200B19331 /* DDLeftBottomPromptLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLeftBottomPromptLabel.m; sourceTree = "<group>"; };
+		E34FF53921C2179200B19331 /* DDPlayerErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerErrorView.m; sourceTree = "<group>"; };
+		E34FF53A21C2179200B19331 /* DDPlayerErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerErrorView.h; sourceTree = "<group>"; };
+		E34FF53C21C2179200B19331 /* DDPlayerControlBottomLandscapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerControlBottomLandscapeView.m; sourceTree = "<group>"; };
+		E34FF53D21C2179200B19331 /* DDPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerControlView.m; sourceTree = "<group>"; };
+		E34FF53E21C2179200B19331 /* DDPlayerControlBottomBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerControlBottomBaseView.h; sourceTree = "<group>"; };
+		E34FF53F21C2179200B19331 /* DDPlayerControlTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerControlTopView.m; sourceTree = "<group>"; };
+		E34FF54021C2179200B19331 /* DDPlayerControlBottomPortraitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerControlBottomPortraitView.m; sourceTree = "<group>"; };
+		E34FF54121C2179200B19331 /* DDPlayerComponentBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerComponentBaseView.m; sourceTree = "<group>"; };
+		E34FF54221C2179200B19331 /* DDPlayerControlBottomBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerControlBottomBaseView.m; sourceTree = "<group>"; };
+		E34FF54321C2179200B19331 /* DDPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerControlView.h; sourceTree = "<group>"; };
+		E34FF54421C2179200B19331 /* DDPlayerControlBottomLandscapeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerControlBottomLandscapeView.h; sourceTree = "<group>"; };
+		E34FF54521C2179200B19331 /* DDPlayerComponentBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerComponentBaseView.h; sourceTree = "<group>"; };
+		E34FF54621C2179200B19331 /* DDPlayerControlBottomPortraitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerControlBottomPortraitView.h; sourceTree = "<group>"; };
+		E34FF54721C2179200B19331 /* DDPlayerControlTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerControlTopView.h; sourceTree = "<group>"; };
+		E34FF54921C2179200B19331 /* DDBrightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBrightView.h; sourceTree = "<group>"; };
+		E34FF54A21C2179200B19331 /* DDBrightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDBrightView.m; sourceTree = "<group>"; };
+		E34FF54C21C2179200B19331 /* DDNeedPayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNeedPayView.h; sourceTree = "<group>"; };
+		E34FF54D21C2179200B19331 /* DDTryWatchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTryWatchView.h; sourceTree = "<group>"; };
+		E34FF54E21C2179200B19331 /* DDNeedPayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNeedPayView.m; sourceTree = "<group>"; };
+		E34FF54F21C2179200B19331 /* DDTryWatchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTryWatchView.m; sourceTree = "<group>"; };
+		E34FF55121C2179200B19331 /* DDPlayerDragProgressPortraitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerDragProgressPortraitView.m; sourceTree = "<group>"; };
+		E34FF55221C2179200B19331 /* DDPlayerDragProgressLandscapeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerDragProgressLandscapeView.h; sourceTree = "<group>"; };
+		E34FF55321C2179200B19331 /* DDPlayerDragProgressBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerDragProgressBaseView.m; sourceTree = "<group>"; };
+		E34FF55421C2179200B19331 /* DDPlayerDragProgressPortraitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerDragProgressPortraitView.h; sourceTree = "<group>"; };
+		E34FF55521C2179200B19331 /* DDPlayerDragProgressLandscapeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayerDragProgressLandscapeView.m; sourceTree = "<group>"; };
+		E34FF55621C2179200B19331 /* DDPlayerDragProgressBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerDragProgressBaseView.h; sourceTree = "<group>"; };
+		E34FF55821C2179200B19331 /* DDTryWatchFinishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTryWatchFinishView.m; sourceTree = "<group>"; };
+		E34FF55921C2179200B19331 /* DDTryWatchFinishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTryWatchFinishView.h; sourceTree = "<group>"; };
+		E34FF55A21C2179200B19331 /* DDPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDPlayer.m; sourceTree = "<group>"; };
+		E34FF55B21C2179200B19331 /* DDPlayerStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPlayerStatus.h; sourceTree = "<group>"; };
+		E34FF55D21C2179200B19331 /* DDPlayer_Gif_Loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = DDPlayer_Gif_Loading.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +292,7 @@
 		E34FF49A21C20D0200B19331 /* DDDownload */ = {
 			isa = PBXGroup;
 			children = (
+				E34FF4E621C2179200B19331 /* DDPlayer */,
 				E34FF49B21C20D0200B19331 /* AppDelegate.h */,
 				E34FF49C21C20D0200B19331 /* AppDelegate.m */,
 				E34FF4E121C213CD00B19331 /* view */,
@@ -201,6 +344,293 @@
 				E34FF4E421C2158B00B19331 /* DownloadViewController.m */,
 			);
 			path = viewController;
+			sourceTree = "<group>";
+		};
+		E34FF4E621C2179200B19331 /* DDPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF4E721C2179200B19331 /* DDPlayer.h */,
+				E34FF4E821C2179200B19331 /* DDPlayerManager.h */,
+				E34FF4E921C2179200B19331 /* DDPlayerView */,
+				E34FF50521C2179200B19331 /* Other */,
+				E34FF50D21C2179200B19331 /* DDVideoPlayer.h */,
+				E34FF50E21C2179200B19331 /* DDPlayerDelegate.h */,
+				E34FF50F21C2179200B19331 /* DDPlayerManager.m */,
+				E34FF51021C2179200B19331 /* View */,
+				E34FF55A21C2179200B19331 /* DDPlayer.m */,
+				E34FF55B21C2179200B19331 /* DDPlayerStatus.h */,
+				E34FF55C21C2179200B19331 /* Resource */,
+			);
+			path = DDPlayer;
+			sourceTree = "<group>";
+		};
+		E34FF4E921C2179200B19331 /* DDPlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF4EA21C2179200B19331 /* DDPlayerContentView.h */,
+				E34FF4EB21C2179200B19331 /* DDPlayerView.m */,
+				E34FF4EC21C2179200B19331 /* DDPlayerViewDelegate.h */,
+				E34FF4ED21C2179200B19331 /* Extensions */,
+				E34FF50321C2179200B19331 /* DDPlayerView.h */,
+				E34FF50421C2179200B19331 /* DDPlayerContentView.m */,
+			);
+			path = DDPlayerView;
+			sourceTree = "<group>";
+		};
+		E34FF4ED21C2179200B19331 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF4EE21C2179200B19331 /* DDPlayerView+ShowSubView.h */,
+				E34FF4EF21C2179200B19331 /* DDPlayerView+Private.m */,
+				E34FF4F021C2179200B19331 /* ViewAppear */,
+				E34FF4F321C2179200B19331 /* 视频截取 */,
+				E34FF4F621C2179200B19331 /* 切换清晰度 */,
+				E34FF4F921C2179200B19331 /* 图像截取 */,
+				E34FF4FC21C2179200B19331 /* DDPlayerView+ShowSubView.m */,
+				E34FF4FD21C2179200B19331 /* 显示付费和试看 */,
+				E34FF50221C2179200B19331 /* DDPlayerView+Private.h */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E34FF4F021C2179200B19331 /* ViewAppear */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF4F121C2179200B19331 /* DDPlayerView+ViewAppear.h */,
+				E34FF4F221C2179200B19331 /* DDPlayerView+ViewAppear.m */,
+			);
+			path = ViewAppear;
+			sourceTree = "<group>";
+		};
+		E34FF4F321C2179200B19331 /* 视频截取 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF4F421C2179200B19331 /* DDPlayerView+CaptureVideo.h */,
+				E34FF4F521C2179200B19331 /* DDPlayerView+CaptureVideo.m */,
+			);
+			path = "视频截取";
+			sourceTree = "<group>";
+		};
+		E34FF4F621C2179200B19331 /* 切换清晰度 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF4F721C2179200B19331 /* DDPlayerView+SwitchLine.m */,
+				E34FF4F821C2179200B19331 /* DDPlayerView+SwitchLine.h */,
+			);
+			path = "切换清晰度";
+			sourceTree = "<group>";
+		};
+		E34FF4F921C2179200B19331 /* 图像截取 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF4FA21C2179200B19331 /* DDPlayerView+CaptureImage.h */,
+				E34FF4FB21C2179200B19331 /* DDPlayerView+CaptureImage.m */,
+			);
+			path = "图像截取";
+			sourceTree = "<group>";
+		};
+		E34FF4FD21C2179200B19331 /* 显示付费和试看 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF4FE21C2179200B19331 /* DDPlayerView+TryWatch.m */,
+				E34FF4FF21C2179200B19331 /* DDPlayerView+ToPay.m */,
+				E34FF50021C2179200B19331 /* DDPlayerView+TryWatch.h */,
+				E34FF50121C2179200B19331 /* DDPlayerView+ToPay.h */,
+			);
+			path = "显示付费和试看";
+			sourceTree = "<group>";
+		};
+		E34FF50521C2179200B19331 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF50621C2179200B19331 /* DDKVOManager.h */,
+				E34FF50721C2179200B19331 /* DDPlayerTool.h */,
+				E34FF50821C2179200B19331 /* DDPlayerUIFactory.m */,
+				E34FF50921C2179200B19331 /* DDKVOManager.m */,
+				E34FF50A21C2179200B19331 /* NSTimer+Block.h */,
+				E34FF50B21C2179200B19331 /* DDPlayerUIFactory.h */,
+				E34FF50C21C2179200B19331 /* DDPlayerTool.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		E34FF51021C2179200B19331 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF51121C2179200B19331 /* 选择清晰度 */,
+				E34FF51821C2179200B19331 /* 封面 */,
+				E34FF51B21C2179200B19331 /* 截取视频分享 */,
+				E34FF52621C2179200B19331 /* 截取图片分享 */,
+				E34FF52B21C2179200B19331 /* ContentView */,
+				E34FF52E21C2179200B19331 /* 网络监控提示图 */,
+				E34FF53321C2179200B19331 /* Common */,
+				E34FF53821C2179200B19331 /* 播放器异常提示图 */,
+				E34FF53B21C2179200B19331 /* ControlView */,
+				E34FF54821C2179200B19331 /* 亮度调试视图 */,
+				E34FF54B21C2179200B19331 /* 2c课程相关 */,
+				E34FF55021C2179200B19331 /* 拖拽进度视图 */,
+				E34FF55721C2179200B19331 /* 付费视频视图 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E34FF51121C2179200B19331 /* 选择清晰度 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF51221C2179200B19331 /* DDPlayerClarityPromptLabel.m */,
+				E34FF51321C2179200B19331 /* DDPlayerClarityTool.m */,
+				E34FF51421C2179200B19331 /* DDPlayerClarityChoiceView.h */,
+				E34FF51521C2179200B19331 /* DDPlayerClarityTool.h */,
+				E34FF51621C2179200B19331 /* DDPlayerClarityPromptLabel.h */,
+				E34FF51721C2179200B19331 /* DDPlayerClarityChoiceView.m */,
+			);
+			path = "选择清晰度";
+			sourceTree = "<group>";
+		};
+		E34FF51821C2179200B19331 /* 封面 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF51921C2179200B19331 /* DDPlayerCoverView.m */,
+				E34FF51A21C2179200B19331 /* DDPlayerCoverView.h */,
+			);
+			path = "封面";
+			sourceTree = "<group>";
+		};
+		E34FF51B21C2179200B19331 /* 截取视频分享 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF51C21C2179200B19331 /* DDCaptureVideoView.m */,
+				E34FF51D21C2179200B19331 /* DDCaptureVideoShareView.m */,
+				E34FF51E21C2179200B19331 /* DDTextView.m */,
+				E34FF51F21C2179200B19331 /* DDCaptureVideoProgressView.h */,
+				E34FF52021C2179200B19331 /* DDCaptureVideoCommentView.m */,
+				E34FF52121C2179200B19331 /* DDCaptureVideoShareView.h */,
+				E34FF52221C2179200B19331 /* DDCaptureVideoView.h */,
+				E34FF52321C2179200B19331 /* DDTextView.h */,
+				E34FF52421C2179200B19331 /* DDCaptureVideoProgressView.m */,
+				E34FF52521C2179200B19331 /* DDCaptureVideoCommentView.h */,
+			);
+			path = "截取视频分享";
+			sourceTree = "<group>";
+		};
+		E34FF52621C2179200B19331 /* 截取图片分享 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF52721C2179200B19331 /* DDCaptureImageShareSmallView.m */,
+				E34FF52821C2179200B19331 /* DDCaptureImageShareView.h */,
+				E34FF52921C2179200B19331 /* DDCaptureImageShareSmallView.h */,
+				E34FF52A21C2179200B19331 /* DDCaptureImageShareView.m */,
+			);
+			path = "截取图片分享";
+			sourceTree = "<group>";
+		};
+		E34FF52B21C2179200B19331 /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF52C21C2179200B19331 /* DDPlayerContainerView.h */,
+				E34FF52D21C2179200B19331 /* DDPlayerContainerView.m */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		E34FF52E21C2179200B19331 /* 网络监控提示图 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF52F21C2179200B19331 /* DDNetworkErrorView.h */,
+				E34FF53021C2179200B19331 /* DDNetworkWWANWarnView.h */,
+				E34FF53121C2179200B19331 /* DDNetworkErrorView.m */,
+				E34FF53221C2179200B19331 /* DDNetworkWWANWarnView.m */,
+			);
+			path = "网络监控提示图";
+			sourceTree = "<group>";
+		};
+		E34FF53321C2179200B19331 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF53421C2179200B19331 /* DDPlayerBackButton.m */,
+				E34FF53521C2179200B19331 /* DDLeftBottomPromptLabel.h */,
+				E34FF53621C2179200B19331 /* DDPlayerBackButton.h */,
+				E34FF53721C2179200B19331 /* DDLeftBottomPromptLabel.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E34FF53821C2179200B19331 /* 播放器异常提示图 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF53921C2179200B19331 /* DDPlayerErrorView.m */,
+				E34FF53A21C2179200B19331 /* DDPlayerErrorView.h */,
+			);
+			path = "播放器异常提示图";
+			sourceTree = "<group>";
+		};
+		E34FF53B21C2179200B19331 /* ControlView */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF53C21C2179200B19331 /* DDPlayerControlBottomLandscapeView.m */,
+				E34FF53D21C2179200B19331 /* DDPlayerControlView.m */,
+				E34FF53E21C2179200B19331 /* DDPlayerControlBottomBaseView.h */,
+				E34FF53F21C2179200B19331 /* DDPlayerControlTopView.m */,
+				E34FF54021C2179200B19331 /* DDPlayerControlBottomPortraitView.m */,
+				E34FF54121C2179200B19331 /* DDPlayerComponentBaseView.m */,
+				E34FF54221C2179200B19331 /* DDPlayerControlBottomBaseView.m */,
+				E34FF54321C2179200B19331 /* DDPlayerControlView.h */,
+				E34FF54421C2179200B19331 /* DDPlayerControlBottomLandscapeView.h */,
+				E34FF54521C2179200B19331 /* DDPlayerComponentBaseView.h */,
+				E34FF54621C2179200B19331 /* DDPlayerControlBottomPortraitView.h */,
+				E34FF54721C2179200B19331 /* DDPlayerControlTopView.h */,
+			);
+			path = ControlView;
+			sourceTree = "<group>";
+		};
+		E34FF54821C2179200B19331 /* 亮度调试视图 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF54921C2179200B19331 /* DDBrightView.h */,
+				E34FF54A21C2179200B19331 /* DDBrightView.m */,
+			);
+			path = "亮度调试视图";
+			sourceTree = "<group>";
+		};
+		E34FF54B21C2179200B19331 /* 2c课程相关 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF54C21C2179200B19331 /* DDNeedPayView.h */,
+				E34FF54D21C2179200B19331 /* DDTryWatchView.h */,
+				E34FF54E21C2179200B19331 /* DDNeedPayView.m */,
+				E34FF54F21C2179200B19331 /* DDTryWatchView.m */,
+			);
+			path = "2c课程相关";
+			sourceTree = "<group>";
+		};
+		E34FF55021C2179200B19331 /* 拖拽进度视图 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF55121C2179200B19331 /* DDPlayerDragProgressPortraitView.m */,
+				E34FF55221C2179200B19331 /* DDPlayerDragProgressLandscapeView.h */,
+				E34FF55321C2179200B19331 /* DDPlayerDragProgressBaseView.m */,
+				E34FF55421C2179200B19331 /* DDPlayerDragProgressPortraitView.h */,
+				E34FF55521C2179200B19331 /* DDPlayerDragProgressLandscapeView.m */,
+				E34FF55621C2179200B19331 /* DDPlayerDragProgressBaseView.h */,
+			);
+			path = "拖拽进度视图";
+			sourceTree = "<group>";
+		};
+		E34FF55721C2179200B19331 /* 付费视频视图 */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF55821C2179200B19331 /* DDTryWatchFinishView.m */,
+				E34FF55921C2179200B19331 /* DDTryWatchFinishView.h */,
+			);
+			path = "付费视频视图";
+			sourceTree = "<group>";
+		};
+		E34FF55C21C2179200B19331 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E34FF55D21C2179200B19331 /* DDPlayer_Gif_Loading.gif */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +742,7 @@
 				E34FF4A821C20D0300B19331 /* LaunchScreen.storyboard in Resources */,
 				E34FF4E021C213C300B19331 /* DownloadCell.xib in Resources */,
 				E34FF4A521C20D0300B19331 /* Assets.xcassets in Resources */,
+				E34FF58B21C2179200B19331 /* DDPlayer_Gif_Loading.gif in Resources */,
 				E34FF4A321C20D0200B19331 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,10 +838,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				E34FF4AB21C20D0300B19331 /* main.m in Sources */,
+				E34FF58021C2179200B19331 /* DDPlayerControlBottomPortraitView.m in Sources */,
+				E34FF57121C2179200B19331 /* DDCaptureVideoShareView.m in Sources */,
+				E34FF56621C2179200B19331 /* DDPlayerView+ToPay.m in Sources */,
+				E34FF56B21C2179200B19331 /* DDPlayerManager.m in Sources */,
 				E34FF4DF21C213C300B19331 /* DownloadCell.m in Sources */,
+				E34FF56721C2179200B19331 /* DDPlayerContentView.m in Sources */,
+				E34FF57821C2179200B19331 /* DDNetworkErrorView.m in Sources */,
+				E34FF55F21C2179200B19331 /* DDPlayerView+Private.m in Sources */,
+				E34FF56021C2179200B19331 /* DDPlayerView+ViewAppear.m in Sources */,
+				E34FF57321C2179200B19331 /* DDCaptureVideoCommentView.m in Sources */,
+				E34FF56A21C2179200B19331 /* DDPlayerTool.m in Sources */,
+				E34FF58821C2179200B19331 /* DDPlayerDragProgressLandscapeView.m in Sources */,
 				E34FF4DE21C213C300B19331 /* MainViewController.m in Sources */,
+				E34FF58121C2179200B19331 /* DDPlayerComponentBaseView.m in Sources */,
+				E34FF58921C2179200B19331 /* DDTryWatchFinishView.m in Sources */,
 				E34FF49D21C20D0200B19331 /* AppDelegate.m in Sources */,
+				E34FF58221C2179200B19331 /* DDPlayerControlBottomBaseView.m in Sources */,
+				E34FF56421C2179200B19331 /* DDPlayerView+ShowSubView.m in Sources */,
+				E34FF58621C2179200B19331 /* DDPlayerDragProgressPortraitView.m in Sources */,
+				E34FF56821C2179200B19331 /* DDPlayerUIFactory.m in Sources */,
+				E34FF57221C2179200B19331 /* DDTextView.m in Sources */,
+				E34FF56521C2179200B19331 /* DDPlayerView+TryWatch.m in Sources */,
+				E34FF56321C2179200B19331 /* DDPlayerView+CaptureImage.m in Sources */,
+				E34FF58321C2179200B19331 /* DDBrightView.m in Sources */,
 				E34FF4E521C2158B00B19331 /* DownloadViewController.m in Sources */,
+				E34FF57421C2179200B19331 /* DDCaptureVideoProgressView.m in Sources */,
+				E34FF57521C2179200B19331 /* DDCaptureImageShareSmallView.m in Sources */,
+				E34FF56D21C2179200B19331 /* DDPlayerClarityTool.m in Sources */,
+				E34FF57621C2179200B19331 /* DDCaptureImageShareView.m in Sources */,
+				E34FF58421C2179200B19331 /* DDNeedPayView.m in Sources */,
+				E34FF55E21C2179200B19331 /* DDPlayerView.m in Sources */,
+				E34FF56121C2179200B19331 /* DDPlayerView+CaptureVideo.m in Sources */,
+				E34FF58521C2179200B19331 /* DDTryWatchView.m in Sources */,
+				E34FF56921C2179200B19331 /* DDKVOManager.m in Sources */,
+				E34FF56C21C2179200B19331 /* DDPlayerClarityPromptLabel.m in Sources */,
+				E34FF57E21C2179200B19331 /* DDPlayerControlView.m in Sources */,
+				E34FF57A21C2179200B19331 /* DDPlayerBackButton.m in Sources */,
+				E34FF58A21C2179200B19331 /* DDPlayer.m in Sources */,
+				E34FF58721C2179200B19331 /* DDPlayerDragProgressBaseView.m in Sources */,
+				E34FF57C21C2179200B19331 /* DDPlayerErrorView.m in Sources */,
+				E34FF56F21C2179200B19331 /* DDPlayerCoverView.m in Sources */,
+				E34FF57021C2179200B19331 /* DDCaptureVideoView.m in Sources */,
+				E34FF56221C2179200B19331 /* DDPlayerView+SwitchLine.m in Sources */,
+				E34FF57B21C2179200B19331 /* DDLeftBottomPromptLabel.m in Sources */,
+				E34FF57D21C2179200B19331 /* DDPlayerControlBottomLandscapeView.m in Sources */,
+				E34FF57721C2179200B19331 /* DDPlayerContainerView.m in Sources */,
+				E34FF56E21C2179200B19331 /* DDPlayerClarityChoiceView.m in Sources */,
+				E34FF57F21C2179200B19331 /* DDPlayerControlTopView.m in Sources */,
+				E34FF57921C2179200B19331 /* DDNetworkWWANWarnView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

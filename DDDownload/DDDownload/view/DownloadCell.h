@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DownloadCell : UITableViewCell
 
+@property(nonatomic, copy) void(^clickDownloadButtonBlock)(void);
+@property(nonatomic, copy) void(^clickCatButtonBlock)(void);
+@property(nonatomic, copy) void(^clickDeleteButtonBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

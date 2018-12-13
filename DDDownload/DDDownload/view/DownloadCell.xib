@@ -26,8 +26,11 @@
                         </constraints>
                         <state key="normal" title="开始"/>
                         <state key="selected" title="暂停"/>
+                        <connections>
+                            <action selector="downloadButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="AzG-4C-ntO"/>
+                        </connections>
                     </button>
-                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="T3W-lN-dNo">
+                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="T3W-lN-dNo">
                         <rect key="frame" x="-2" y="69.5" width="324" height="31"/>
                     </slider>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i24-Ih-A0f">
@@ -36,6 +39,9 @@
                             <constraint firstAttribute="width" constant="60" id="M2q-nF-y04"/>
                         </constraints>
                         <state key="normal" title="查看"/>
+                        <connections>
+                            <action selector="catButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qeu-xq-oF7"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="use-Sk-6Ud">
                         <rect key="frame" x="144" y="35" width="60" height="30"/>
@@ -43,6 +49,9 @@
                             <constraint firstAttribute="width" constant="60" id="MFy-QH-nbI"/>
                         </constraints>
                         <state key="normal" title="删除"/>
+                        <connections>
+                            <action selector="deleteButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="slb-rL-jeC"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -59,6 +68,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="catButton" destination="i24-Ih-A0f" id="kTL-B9-WBf"/>
+                <outlet property="deleteButton" destination="use-Sk-6Ud" id="poB-rp-DKR"/>
                 <outlet property="downloadButton" destination="Nur-z1-cqx" id="pUN-ZT-5rE"/>
                 <outlet property="slider" destination="T3W-lN-dNo" id="0oB-F0-yWM"/>
             </connections>
