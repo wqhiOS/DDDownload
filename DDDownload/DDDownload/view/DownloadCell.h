@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) void(^clickCatButtonBlock)(void);
 @property(nonatomic, copy) void(^clickDeleteButtonBlock)(void);
 
+@property(nonatomic, assign) CGFloat progress;
+
 @end
 
 NS_ASSUME_NONNULL_END

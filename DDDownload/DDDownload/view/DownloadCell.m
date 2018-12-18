@@ -51,4 +51,8 @@
     }
 }
 
+- (void)setProgress:(CGFloat)progress {
+    _progress = progress;
+    self.slider.value = progress;
+}
 @end

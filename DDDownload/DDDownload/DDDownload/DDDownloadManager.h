@@ -10,14 +10,17 @@
 
 @interface DDDownloadManager : NSObject
 
-@property(nonatomic, assign) BOOL autoDownloadInWIFI;
-@property(nonatomic, assign) BOOL autoDownloadInWANN;
+/**
+ 流量情况下是否能下载
+ */
+@property(nonatomic, assign) BOOL downloadInWWAN;
 
 
 + (instancetype)sharedManager;
 
 - (void)downloadWithUrl:(NSString *)url;
 - (void)cancelDownloadWithUrl:(NSString *)url;
+- (void)deleteDownloadWithUrl:(NSString *)url;
 
 @end
 

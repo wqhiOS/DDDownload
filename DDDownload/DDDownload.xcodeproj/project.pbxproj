@@ -72,6 +72,7 @@
 		E34FF59621C219C400B19331 /* DDDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF59521C219C400B19331 /* DDDownloadCache.m */; };
 		E34FF59921C219DC00B19331 /* DDDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF59821C219DC00B19331 /* DDDownloadModel.m */; };
 		E34FF59C21C2226400B19331 /* NSString+md5.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF59B21C2226400B19331 /* NSString+md5.m */; };
+		E34FF59F21C2470600B19331 /* DDDownloadDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = E34FF59E21C2470600B19331 /* DDDownloadDatabase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +231,8 @@
 		E34FF59821C219DC00B19331 /* DDDownloadModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDDownloadModel.m; sourceTree = "<group>"; };
 		E34FF59A21C2226400B19331 /* NSString+md5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+md5.h"; sourceTree = "<group>"; };
 		E34FF59B21C2226400B19331 /* NSString+md5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+md5.m"; sourceTree = "<group>"; };
+		E34FF59D21C2470600B19331 /* DDDownloadDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDDownloadDatabase.h; sourceTree = "<group>"; };
+		E34FF59E21C2470600B19331 /* DDDownloadDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDDownloadDatabase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -662,6 +665,8 @@
 				E34FF59821C219DC00B19331 /* DDDownloadModel.m */,
 				E34FF59421C219C400B19331 /* DDDownloadCache.h */,
 				E34FF59521C219C400B19331 /* DDDownloadCache.m */,
+				E34FF59D21C2470600B19331 /* DDDownloadDatabase.h */,
+				E34FF59E21C2470600B19331 /* DDDownloadDatabase.m */,
 				E34FF59A21C2226400B19331 /* NSString+md5.h */,
 				E34FF59B21C2226400B19331 /* NSString+md5.m */,
 			);
@@ -900,6 +905,7 @@
 				E34FF56321C2179200B19331 /* DDPlayerView+CaptureImage.m in Sources */,
 				E34FF58321C2179200B19331 /* DDBrightView.m in Sources */,
 				E34FF4E521C2158B00B19331 /* DownloadViewController.m in Sources */,
+				E34FF59F21C2470600B19331 /* DDDownloadDatabase.m in Sources */,
 				E34FF57421C2179200B19331 /* DDCaptureVideoProgressView.m in Sources */,
 				E34FF57521C2179200B19331 /* DDCaptureImageShareSmallView.m in Sources */,
 				E34FF56D21C2179200B19331 /* DDPlayerClarityTool.m in Sources */,

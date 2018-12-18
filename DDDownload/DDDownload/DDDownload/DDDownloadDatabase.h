@@ -1,5 +1,5 @@
 //
-//  NSString+md5.h
+//  DDDownloadDatabase.h
 //  DDDownload
 //
 //  Created by wuqh on 2018/12/13.
@@ -10,10 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSString (md5)
+@interface DDDownloadDatabase : NSObject
 
-- (NSString *)md5;
-
++ (instancetype)sharedDatabase;
 
 @end
 

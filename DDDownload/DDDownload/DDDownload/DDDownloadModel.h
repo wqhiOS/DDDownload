@@ -36,32 +36,32 @@ typedef NS_ENUM(NSInteger,DDDownloadState) {
 /**
  下载地址
  */
-@property(nonatomic, copy) NSString *url;
+@property(nonatomic, copy, readonly) NSString *url;
 
 /**
  下载成功文件存放地址
  */
-@property(nonatomic, copy) NSString *filePath;
+@property(nonatomic, copy, readonly) NSString *filePath;
 
 /**
  下载进度
  */
-@property(nonatomic, assign) CGFloat *progress;
+@property(nonatomic, assign, readonly) CGFloat progress;
 
 /**
  下载文件总大小
  */
-@property(nonatomic, assign) int64_t totalBytes;
+@property(nonatomic, assign, readonly) int64_t totalBytes;
 
 /**
  已下载文件大小
  */
-@property(nonatomic, assign) int64_t totalBytesWritten;
+@property(nonatomic, assign, readonly) int64_t bytesWritten;
 
 /**
  下载状态
  */
-@property(nonatomic, assign) DDDownloadState *downloadState;
+@property(nonatomic, assign, readonly) DDDownloadState *downloadState;
 
 @end
 

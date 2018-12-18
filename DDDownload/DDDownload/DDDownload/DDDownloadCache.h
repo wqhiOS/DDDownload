@@ -13,12 +13,14 @@
 
 + (instancetype)shared;
 
-
 - (void)setDownloadModel:(DDDownloadModel *)dowmloadModel forUrl:(NSString *)url;
-- (DDDownloadModel *)downloadModelForUrl:(NSString *)url;
-
 - (void)setResumeData:(NSData *)data forUrl:(NSString *)url;
+
+- (DDDownloadModel *)downloadModelForUrl:(NSString *)url;
 - (NSData *)resumeDataForUrl:(NSString *)url;
+
+- (void)removeDownloadModelForUrl:(NSString *)url;
+- (void)removeResumeDataForUrl:(NSString *)url;
 
 @end
 

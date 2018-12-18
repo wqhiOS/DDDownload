@@ -10,6 +10,8 @@
 #define DDDownload_h
 
 #import "DDDownloadManager.h"
+#import "NSString+md5.h"
+#import "DDDownloadModel.h"
 
 
 #endif /* DDDownload_h */

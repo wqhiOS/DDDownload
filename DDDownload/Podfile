@@ -11,6 +11,7 @@ target 'DDDownload' do
   pod 'SDWebImage', '~> 4.0'
   pod 'YYCache'
   pod 'YYModel'
+  pod 'FMDB'
   target 'DDDownloadTests' do
     inherit! :search_paths
     # Pods for testing

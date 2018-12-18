@@ -42,12 +42,18 @@ static id _instance;
 - (DDDownloadModel *)downloadModelForUrl:(NSString *)url {
     return (DDDownloadModel *)[self.downloadModelCache objectForKey:url];
 }
+- (void)removeDownloadModelForUrl:(NSString *)url {
+    [self.downloadModelCache removeObjectForKey:url];
+}
 
 - (void)setResumeData:(NSData *)data forUrl:(NSString *)url {
     [self.resumeDataCache setObject:data forKey:url withBlock:nil];
 }
 - (NSData *)resumeDataForUrl:(NSString *)url {
     return (NSData *)[self.resumeDataCache objectForKey:url];
+}
+- (void)removeResumeDataForUrl:(NSString *)url {
+    return [self.resumeDataCache removeObjectForKey:url];
 }
 
 
