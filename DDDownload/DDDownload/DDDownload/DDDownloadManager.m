@@ -17,7 +17,7 @@
 @property(nonatomic, strong) NSMutableDictionary *downloadTasks;
 
 // 下载文件夹，下载的视频都放在这里
-@property(class, nonatomic, readonly) NSString *downloadDirectory;
+@property(nonatomic, readonly) NSString *downloadDirectory;
 
 @end
 
@@ -100,7 +100,8 @@ didFinishDownloadingToURL:(NSURL *)location {
     
     NSString *url = downloadTask.currentRequest.URL.absoluteString;
     NSError *error;
-    [NSFileManager.defaultManager moveItemAtURL:location toURL:[NSURL URLWithString:[DDDownloadManager downloadFilePathWithUrl:url]] error:&error];
+    
+    [NSFileManager.defaultManager moveItemAtURL:location toURL:[NSURL fileURLWithPath:[DDDownloadManager downloadFilePathWithUrl:url]] error:&error];
     if (error) {
         NSLog(@"%@",error);
         NSLog(@"完成异常，不可能走到这里");

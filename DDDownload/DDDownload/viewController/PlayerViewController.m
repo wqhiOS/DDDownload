@@ -17,6 +17,7 @@
 @implementation PlayerViewController
 
 - (void)dealloc {
+    NSLog(@"PlayerVC Dealloc");
     [self.playerView.player stop];
 }
 
@@ -26,10 +27,11 @@
     self.view.backgroundColor = UIColor.whiteColor;
     self.playerView = [[DDPlayerView alloc] initWithFrame:CGRectMake(0, 200, self.view.bounds.size.width, self.view.bounds.size.width * 9 / 16)];
     [self.view addSubview:self.playerView];
+    [self.playerView.player playWithUrl:_url];
 }
-- (void)setUrl:(NSString *)url {
-    [self.playerView.player playWithUrl:url];
-}
+//- (void)setUrl:(NSString *)url {
+////    [self.playerView.player playWithUrl:url];
+//}
 
 
 @end

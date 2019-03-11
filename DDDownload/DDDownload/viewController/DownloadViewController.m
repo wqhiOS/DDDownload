@@ -19,6 +19,10 @@
 
 @implementation DownloadViewController
 
+- (void)dealloc {
+    NSLog(@"Dealloc Dealloc");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
