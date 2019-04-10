@@ -35,7 +35,10 @@ static id _instance;
 - (instancetype)init {
     if (self = [super init]) {
         [DDDownloadManager creatDirectorys];
-        self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:@"com.DDDownloadManager"] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:@"com.DDDownloadManager"];
+        [config setDiscretionary:YES];
+        config.sessionSendsLaunchEvents = YES;
+        self.session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
         self.downloadTasks = @{}.mutableCopy;
     }
     return self;
@@ -97,7 +100,7 @@ static id _instance;
 - (void)URLSession:(NSURLSession *)session
       downloadTask:(NSURLSessionDownloadTask *)downloadTask
 didFinishDownloadingToURL:(NSURL *)location {
-    
+    NSLog(@"%s",__FUNCTION__);
     NSString *url = downloadTask.currentRequest.URL.absoluteString;
     NSError *error;
     
@@ -114,6 +117,7 @@ didFinishDownloadingToURL:(NSURL *)location {
       didWriteData:(int64_t)bytesWritten
  totalBytesWritten:(int64_t)totalBytesWritten
 totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
+    NSLog(@"%s",__FUNCTION__);
     NSString *url = downloadTask.currentRequest.URL.absoluteString;
     
     DDDownloadModel *model = [DDDownloadCache.shared downloadModelForUrl:url];
@@ -128,13 +132,14 @@ totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
       downloadTask:(NSURLSessionDownloadTask *)downloadTask
  didResumeAtOffset:(int64_t)fileOffset
 expectedTotalBytes:(int64_t)expectedTotalBytes {
-    
+    NSLog(@"%s",__FUNCTION__);
 }
 
 - (void)URLSession:(NSURLSession *)session
               task:(NSURLSessionTask *)task
 didCompleteWithError:(nullable NSError *)error {
-    
+    NSLog(@"error:%@",error);
+    NSLog(@"%s",__FUNCTION__);
 }
 
 #pragma mark - 文件夹

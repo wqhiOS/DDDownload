@@ -19,9 +19,9 @@
 
 @implementation DownloadViewController
 
-- (void)dealloc {
-    NSLog(@"Dealloc Dealloc");
-}
+//- (void)dealloc {
+//    NSLog(@"Deal");
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
